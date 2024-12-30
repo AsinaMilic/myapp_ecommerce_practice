@@ -14,10 +14,10 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Match Your Style'),
+        title: const Text('Match Your Style?'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search),
+            icon: Image.asset('assets/images/profile_pic.png'),
             onPressed: () {
               // Implement search functionality
             },
@@ -92,7 +92,8 @@ class ProductGrid extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     product.name,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(

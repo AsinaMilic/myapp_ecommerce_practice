@@ -10,12 +10,12 @@ class CartScreen extends StatelessWidget {
     final cart = Provider.of<CartProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('My Cart')),
+      /*appBar: AppBar(title: const Text('My Cart')),
       body: ListView.builder(
         itemCount: cart.items.length,
         itemBuilder: (ctx, i) => CartItemWidget(cart.items.values.toList()[i]),
       ),
-      bottomNavigationBar: CheckoutBar(total: cart.totalAmount),
+      bottomNavigationBar: CheckoutBar(total: cart.totalAmount),*/
     );
   }
 }

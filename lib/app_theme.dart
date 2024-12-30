@@ -5,6 +5,7 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       primarySwatch: Colors.blue,
+      fontFamily: 'Poppins',
       visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
