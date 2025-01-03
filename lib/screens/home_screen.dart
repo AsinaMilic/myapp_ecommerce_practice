@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import 'package:myapp/providers/product_provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../models/product_grid.dart';
 
@@ -13,7 +10,6 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
         title: Padding(
           padding: const EdgeInsets.only(left: 20.0, top: 0.0, bottom: 8.0),
           child: Stack(

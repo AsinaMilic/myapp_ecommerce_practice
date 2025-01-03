@@ -8,7 +8,7 @@ class CartProvider extends ChangeNotifier {
   Map<String, CartItem> get items => {..._items};
   double get totalAmount => _items.values.fold(0.0, (sum, item) => sum + item.price * item.quantity);
 
-  void addItem(String productId, String name, double price, String selectedSize, Color selectedColor  ) {
+  void addItem(String productId, String name, double price, String selectedSize, Color selectedColor, String imagePath) {
     if (_items.containsKey(productId)) {
       _items.update(
         productId,
@@ -20,6 +20,7 @@ class CartProvider extends ChangeNotifier {
           quantity: existingItem.quantity + 1,
           color: existingItem.color,
           size: existingItem.size,
+          imagePath: existingItem.imagePath,
         ),
       );
     } else {
@@ -33,9 +34,19 @@ class CartProvider extends ChangeNotifier {
           quantity: 1,
           color: selectedColor,
           size: selectedSize,
+          imagePath: imagePath,
         ),
       );
     }
     notifyListeners();
+  }
+
+  void removeItem(String productId) {
+    _items.remove(productId);
+    notifyListeners();
+  }
+
+  bool isItemInCart(String productId) {
+    return _items.containsKey(productId);
   }
 }

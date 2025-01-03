@@ -42,8 +42,8 @@ class ProductGrid extends StatelessWidget {
                     Expanded(
                       child: ClipRRect(
                         borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-                        child: Image.network(
-                          product.imageUrl,
+                        child: Image.asset(
+                          product.imagePath,
                           fit: BoxFit.cover,
                         ),
                       ),

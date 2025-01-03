@@ -6,8 +6,7 @@ class AppRoutes {
   static Map<String, WidgetBuilder> get routes {
     return {
       '/': (context) => const HomeScreen(),
-      '/cart': (context) => const CartScreen(),
-      // '/product': (context) => const ProductDetailScreen(),
+      '/cart': (context) => const CartScreen()
     };
   }
 }

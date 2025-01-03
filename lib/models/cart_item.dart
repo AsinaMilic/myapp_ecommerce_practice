@@ -8,6 +8,7 @@ class CartItem {
   final int quantity;
   final Color color;
   final String size;
+  final String imagePath;
 
   CartItem({
     required this.id,
@@ -17,5 +18,6 @@ class CartItem {
     required this.quantity,
     required this.color,
     required this.size,
+    required this.imagePath,
   });
 }

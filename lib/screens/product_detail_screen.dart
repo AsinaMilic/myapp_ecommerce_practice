@@ -63,9 +63,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       body: ListView(
         children: [
           const SizedBox(height: 16),
-          FadeInImage(
-            placeholder: const AssetImage('assets/images/placeholder.png'),
-            image: NetworkImage(widget.product.imageUrl),
+          Image.asset(
+            widget.product.imagePath,
             fit: BoxFit.cover,
             height: MediaQuery.of(context).size.height * 0.5,
             width: double.infinity,
@@ -201,13 +200,25 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   return;
                 }
 
-                // If validation passes, add to cart
+                // Check if item is already in cart
+                if (context.read<CartProvider>().isItemInCart(widget.product.id)) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('This item is already in your cart'),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                  return;
+                }
+
+                // If validation passes and item is not in cart, add to cart
                 context.read<CartProvider>().addItem(
                   widget.product.id,
                   widget.product.name,
                   widget.product.price,
                   selectedSize!,
                   selectedColor!,
+                  widget.product.imagePath,
                 );
 
                 ScaffoldMessenger.of(context).showSnackBar(
