@@ -1,5 +1,3 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1954545596.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3946178056.
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'app_routes.dart';
@@ -24,11 +22,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      initialRoute: '/',
-      routes: AppRoutes.routes,
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFFDF0F3), // #FDF0F3
+            Color(0xFFFFFBFC), // #FFFBFC
+          ],
+        ),
+      ),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        initialRoute: '/',
+        routes: AppRoutes.routes,
+      ),
     );
   }
 }
